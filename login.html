@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - KONNECTKARTS</title>
+    <link rel="shortcut icon" href="konnectkarts.jpg" type="image/x-icon">
+
+    <style>
+        header {
+            background:linear-gradient(45deg,#0C2430,#389EAC,#0C2430);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+        }
+
+        button {
+            background-color: #389EAC;
+            color: white;
+            padding: 30px 120px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px;
+            font-size: 24px;
+        }
+
+        button:hover {
+            background-color: #86CFD6;
+        }
+        .main{
+            padding: 20px;
+            margin-left: 1.5%;
+        }
+        .inner{
+        width: 45%;
+        float:left;
+        padding: 20px; 
+        border-radius: 25px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p style="font-size: 70px;font-weight: bold;">KONNECTKARTS</p>
+    </header>
+    <br>
+    <div class="main">
+    <div class="inner" style="margin-right: 30px;">
+        <button onclick="window.location.href='login-details.html?role=customer'">Login as Customer</button>
+        <img src="customer.jpg" alt="customer" width="400px" height="400px">
+    </div>
+    <div class="inner">
+        <button onclick="window.location.href='login-details.html?role=vendor'">Login as Vendor</button>
+        <img src="vendor.jpg" alt="vendor" width="500px" height="400px">
+    </div>
+    </div>
+
+</body>
+
+</html>

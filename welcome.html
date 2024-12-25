@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to KONNECTKARTS</title>
+    <link rel="shortcut icon" href="konnectkarts.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="welcome.css">
+</head>
+
+<body>
+
+    <!-- Welcome Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <h2>Welcome to KONNECTKARTS!</h2>
+            <p>Your one-stop solution to connect with vendors.</p>
+            <button onclick="window.location.href='login.html'">Click to Continue</button>
+        </div>
+    </div>
+
+    <script>
+        // Display the popup after 1 second
+        setTimeout(function () {
+            document.getElementById('popup').style.display = 'block';
+        }, 1000);
+    </script>
+</body>
+
+</html>

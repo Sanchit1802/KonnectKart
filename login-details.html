@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Details - KONNECTKARTS</title>
+    <link rel="shortcut icon" href="konnectkarts.jpg" type="image/x-icon">
+
+    <style>
+        body {
+            background-image: url(loginback.jpg);
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 50px;
+        }
+        form {
+            background:linear-gradient(45deg,#389EAC,#0C2430);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin: 0 auto ;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+            width: 100%;
+            padding: 10px 0px;
+            margin-bottom: 15px;
+            background-color: transparent;
+            border: 0;
+            border-bottom:solid white;
+            font-size: large;
+            color: white;
+        }
+        button {
+            background:linear-gradient(45deg,#1a6c95,#389EAC);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #86CFD6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;font-size: 50px;color: white;">User Details</h1>
+    <form id="login-form">
+        <div id="user-details" style="font-size: x-large;color: white;"></div>
+        <button type="submit" style="font-size: x-large;">Submit</button>
+    </form>
+
+    <script>
+        // Check the role from the URL and pre-fill the form accordingly
+        const urlParams = new URLSearchParams(window.location.search);
+        const role = urlParams.get('role');
+
+        const customerData = {
+            name: '',
+            email: '',
+            phone: '',
+            password: '',
+            address: ''
+        };
+
+        const vendorData = {
+            name: '',
+            email: '',
+            phone: '',
+            password: '',
+            address:''
+        };
+
+        const formContainer = document.getElementById('user-details');
+
+        if (role === 'customer') {
+            formContainer.innerHTML = `
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="${customerData.name}" required>
+                <label for="address">Address:</label>
+                <input type="text" id="Address" name="address" value="${customerData.address}" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="${customerData.email}" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" value="${customerData.phone}" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="${customerData.password}" required>
+            `;
+        } else if (role === 'vendor') {
+            formContainer.innerHTML = `
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="${vendorData.name}" required>
+                <label for="address">Locality:</label>
+                <input type="text" id="Address" name="address" value="${customerData.address}" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="${vendorData.email}" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" value="${vendorData.phone}" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" value="${vendorData.password}" required>
+            `;
+        }
+
+        // Handle form submission
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const address = document.getElementById('Address').value;
+            // Redirect user based on their role (after successful login)
+            if (role === 'customer') {
+                window.location.href = 'vendor-categories.html';  // Redirect to customer dashboard
+            } else if (role === 'vendor') {
+                window.location.href = 'vendor-dashboard.html';  // Redirect to vendor dashboard
+            }
+        });
+    </script>
+
+</body>
+</html>
